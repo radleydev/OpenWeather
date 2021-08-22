@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uvR-ON-WhG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--All Cities View Controller-->
+        <scene sceneID="oje-oc-4ux">
+            <objects>
+                <viewController id="uvR-ON-WhG" customClass="AllCitiesViewController" customModule="OpenWeather2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SGa-0z-1yD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0V-M2-FNG" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKX-VE-gT2">
+                                        <rect key="frame" x="301" y="21" width="93" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="   Add   ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="uvR-ON-WhG" eventType="touchUpInside" id="SCr-j9-O1S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nky-Wf-EYK">
+                                        <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KkD-O1-NQ3"/>
+                                            <constraint firstAttribute="width" constant="30" id="gWR-Ju-EY7"/>
+                                        </constraints>
+                                        <state key="normal" image="back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="uvR-ON-WhG" eventType="touchUpInside" id="s7u-oa-Eq4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.69411764705882351" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Nky-Wf-EYK" firstAttribute="leading" secondItem="Y0V-M2-FNG" secondAttribute="leading" constant="20" id="7j7-M1-gv9"/>
+                                    <constraint firstItem="bKX-VE-gT2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nky-Wf-EYK" secondAttribute="trailing" constant="20" id="GBE-2D-WQ3"/>
+                                    <constraint firstItem="Nky-Wf-EYK" firstAttribute="centerY" secondItem="Y0V-M2-FNG" secondAttribute="centerY" id="JMg-fQ-XtX"/>
+                                    <constraint firstAttribute="trailing" secondItem="bKX-VE-gT2" secondAttribute="trailing" constant="20" id="Yqh-1K-P5U"/>
+                                    <constraint firstItem="bKX-VE-gT2" firstAttribute="centerY" secondItem="Y0V-M2-FNG" secondAttribute="centerY" id="dFE-cc-6lf"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OmW-Y1-Fl4">
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="728.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uvR-ON-WhG" id="V5i-J9-Cuq"/>
+                                    <outlet property="delegate" destination="uvR-ON-WhG" id="RAX-x4-Yj6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OmW-Y1-Fl4" firstAttribute="trailing" secondItem="05N-mq-FSu" secondAttribute="trailing" id="4zx-CK-1gN"/>
+                            <constraint firstItem="Y0V-M2-FNG" firstAttribute="height" secondItem="SGa-0z-1yD" secondAttribute="height" multiplier="0.1" id="Wp8-7r-4pT"/>
+                            <constraint firstItem="OmW-Y1-Fl4" firstAttribute="top" secondItem="Y0V-M2-FNG" secondAttribute="bottom" id="aCe-4M-cyu"/>
+                            <constraint firstItem="Y0V-M2-FNG" firstAttribute="trailing" secondItem="05N-mq-FSu" secondAttribute="trailing" id="aHY-YX-Isv"/>
+                            <constraint firstItem="OmW-Y1-Fl4" firstAttribute="leading" secondItem="05N-mq-FSu" secondAttribute="leading" id="abG-cA-G8P"/>
+                            <constraint firstItem="Y0V-M2-FNG" firstAttribute="top" secondItem="05N-mq-FSu" secondAttribute="top" id="fFD-JR-Jpt"/>
+                            <constraint firstItem="OmW-Y1-Fl4" firstAttribute="bottom" secondItem="05N-mq-FSu" secondAttribute="bottom" id="fYG-Fd-agg"/>
+                            <constraint firstItem="Y0V-M2-FNG" firstAttribute="leading" secondItem="05N-mq-FSu" secondAttribute="leading" id="rWU-lG-lhx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="05N-mq-FSu"/>
+                    </view>
+                    <connections>
+                        <outlet property="allCitiesTableView" destination="OmW-Y1-Fl4" id="2ip-Kk-0DN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAG-2c-iFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979.71014492753636" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="48" height="48"/>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+projectKey=OpenWeather
+serverUrl=http://localhost:9000
+serverVersion=9.0.1.46107
+dashboardUrl=http://localhost:9000/dashboard?id=OpenWeather
+ceTaskId=AXs6wTq81x0LzMD_4ttp
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXs6wTq81x0LzMD_4ttp

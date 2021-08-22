@@ -1,0 +1,54 @@
+disabled_rules:
+- trailing_whitespace
+- force_cast
+- force_unwrapping
+- force_try
+- comment_spacing
+- identifier_name
+opt_in_rules:
+- empty_count
+- empty_string
+excluded:
+- Carthage
+- Pods
+- SwiftLint/Common/3rdPartyLib
+line_length:
+    warning: 150
+    error: 200
+    ignores_function_declarations: true
+    ignores_comments: true
+    ignores_urls: true
+function_body_length:
+    warning: 300
+    error: 500
+function_parameter_count:
+    warning: 6
+    error: 8
+type_body_length:
+    warning: 300
+    error: 500
+file_length:
+    warning: 1000
+    error: 1500
+    ignore_comment_only_lines: true
+cyclomatic_complexity:
+    warning: 15
+    error: 25
+    ignores_case_statements: true
+private_outlet:
+    allow_private_set: true
+    
+custom_rules:        
+    multiple_empty_lines:
+        name: "Multiple Empty Lines"
+        regex: '((?:\s*\n){3,})'
+        message: "There are too many line breaks"
+        severity: error
+        
+    already_true:
+        regex: "== true"
+        message: "Don't compare to true, just use the bool value."
+
+    already_bool:
+        regex: "== false"
+        message: "Don't compare to false, just use !value."
